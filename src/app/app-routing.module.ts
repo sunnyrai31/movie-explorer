@@ -11,11 +11,11 @@ const fallBackRoute: Route = {
 }
 
 const indexRoute: Route = {
-  path: "",   redirectTo: "/home", pathMatch: "full"
+  path: "",   redirectTo: "/", pathMatch: "full"
 }
 
 const routes: Routes = [
-	{path: "home", component: HomeComponent},
+	{path: "", component: HomeComponent},
 	{path: "movie-detail/:movieId", component: MovieDetailComponent},
 	indexRoute,
     fallBackRoute

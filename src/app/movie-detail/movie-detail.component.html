@@ -3,7 +3,7 @@
 	</div>
 	<div class="row first-section" *ngIf="!isLoading">
 		<div class="col-md-6">
-			<img class="movie-poster" [src]="movie.poster_path? 'https://image.tmdb.org/t/p/w500/'+movie.poster_path : '../assets/images/no-image-available.jpg'">
+			<img class="movie-poster img-responsive" [src]="movie.poster_path? 'https://image.tmdb.org/t/p/w500/'+movie.poster_path : '../assets/images/no-image-available.jpg'">
 		</div>
 		<div class="col-md-6">
 			<div>

@@ -21,7 +21,7 @@ export class MovieSearchComponent implements OnInit {
 	searchMovies(): void {
 		if(this.movieNameQuery) {
 			this.movieSearchService.searchMovieNames(this.movieNameQuery,1);
-			this.router.navigate(['home']);
+			this.router.navigate(['']);
 		}
 	}
 
