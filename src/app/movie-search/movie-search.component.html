@@ -1,0 +1,7 @@
+<mat-form-field class="example-form-field">
+  <input class="white-color" matInput type="text" placeholder="Seach for movie name" [(ngModel)]="movieNameQuery">
+  <button mat-button *ngIf="movieNameQuery" matSuffix mat-icon-button aria-label="Clear" (click)="movieNameQuery=''">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button type="submit" style="display: none;" (click)="searchMovies()"></button>
+</mat-form-field>

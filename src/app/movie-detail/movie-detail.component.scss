@@ -1,0 +1,27 @@
+.first-section {
+	border: 2px solid #FFF;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 11px 20px 4px;
+}
+
+.rating {
+	color: indianred;
+    font-size: 21px;
+}
+
+.data-section div label {
+	color: #000;
+	font-size: 18px;
+	font-weight:600;
+}
+
+.logo-height-width{
+    height: 100px;
+    width: 100px;
+}
+
+.data-section div label > span {
+	color: tomato;
+    font-size: 15px;
+}

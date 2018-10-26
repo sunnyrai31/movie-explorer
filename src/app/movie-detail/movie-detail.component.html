@@ -1,0 +1,58 @@
+<div class="container">
+	<div *ngIf="isLoading" class="data-loading">
+	</div>
+	<div class="row first-section" *ngIf="!isLoading">
+		<div class="col-md-6">
+			<img class="movie-poster" [src]="movie.poster_path? 'https://image.tmdb.org/t/p/w500/'+movie.poster_path : '../assets/images/no-image-available.jpg'">
+		</div>
+		<div class="col-md-6">
+			<div>
+				<h1>
+					{{movie.title}}
+					<span class="rating"> ( {{movie.popularity.toFixed(1)}} / 10 )</span> 
+				</h1>
+				<p>{{movie.overview}}</p>
+			</div>
+			<div class="data-section">
+				<div>
+					<label> Language: 
+						<span *ngFor="let lang of movie.spoken_languages">{{lang.name}} ,</span>
+					</label>
+				</div>
+				<div>
+					<label> Genres: 
+						<span *ngFor="let genre of movie.genres">{{genre.name}} ,</span>
+					</label>
+				</div>
+				<div>
+					<label> Production House: 
+						<span *ngFor="let ph of movie.production_companies">
+							{{ph.name}} ,
+						</span>
+					</label>
+				</div>
+				<div>
+					<label> Production Countries: 
+						<span *ngFor="let country of movie.production_countries">
+							{{country.name}} ,
+						</span>
+					</label>
+				</div>
+				<div>
+					<label> Release on: 
+						<span>{{movie.release_date}}</span>
+					</label>
+				</div>
+				<div>
+					<label> Status: 
+						<span>{{movie.status}}</span>
+					</label>
+				</div>
+			</div>
+			
+			<span *ngFor="let ph of movie.production_companies">
+				<img *ngIf="ph.logo_path" class = "logo-height-width" [src]="'https://image.tmdb.org/t/p/w500'+ph.logo_path"/>
+			</span>
+		</div>
+	</div>
+</div>

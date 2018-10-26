@@ -1,0 +1,18 @@
+.card {
+  max-width: 400px;
+}
+
+.card-gap {
+	padding: 10px;
+}
+
+.movie-poster {
+	height: 350px;
+}
+
+.overview {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;
+}

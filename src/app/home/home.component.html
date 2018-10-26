@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="centered" *ngIf="isListLoading === undefined && !movieList.length">
+		<h1>Find your movie from movie explorer</h1>
+	</div>
+	<div class="data-loading" *ngIf="isListLoading">
+	</div>
+	<div class="centered" *ngIf="isListLoading === false && !movieList.length">
+		<h1>No movie was found!!!</h1>
+	</div>
+	<div class="row" *ngIf="isListLoading === false" (window:scroll)="onScroll($event)">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 card-gap" *ngFor="let movie of movieList">
+			<mat-card class="card cursor-pointer" [routerLink]="['/movie-detail', movie.id]">
+			  <mat-card-header>
+			    <mat-card-title>{{movie.title}}</mat-card-title>
+			    <mat-card-subtitle>Released on {{movie.release_date}}</mat-card-subtitle>
+			  </mat-card-header>
+			  <img class="movie-poster" mat-card-image [src]="movie.poster_path? 'https://image.tmdb.org/t/p/w500'+movie.poster_path : '../assets/images/no-image-available.jpg'">
+			  <mat-card-content>
+			    <p class="overview" matTooltip="{{movie.overview}}">
+			      {{movie.overview}}
+			    </p>
+			  </mat-card-content>
+			  <mat-card-actions>
+			    <button mat-button>Rated: {{movie.vote_average}}</button>
+			  </mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+	<div class="row">
+			<div *ngIf="isLoadingMoreData && !isListLoading" class="col-md-12 loading-more-data"></div>
+	</div>
+</div>
